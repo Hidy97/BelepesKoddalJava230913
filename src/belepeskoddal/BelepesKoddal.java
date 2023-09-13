@@ -23,25 +23,20 @@ public class BelepesKoddal {
     private static void Belepes() {
         int probalkozas = 1;
         int maxProbalkozas = 3;
-        System.out.printf("kód megadása: ");
+        System.out.printf("kérem a belépési kódot (%d/%d): ", probalkozas, maxProbalkozas);
+        //probalkozas = 2;
         int beirtKod = sc.nextInt();
 
-        while (!(beirtKod == pinKod) && probalkozas <= maxProbalkozas) {
+        do {
+            probalkozas++;
             System.out.printf("kérem a belépési kódot (%d/%d): ", probalkozas, maxProbalkozas);
             beirtKod = sc.nextInt();
-            probalkozas++;
-        }
-
-//        do {
-//            System.out.printf("kérem a belépési kódot (%d/%d): ", probalkozas, maxProbalkozas);
-//            beirtKod = sc.nextInt();
-//            probalkozas++;
-//        } while (!(beirtKod == pinKod) && probalkozas <= maxProbalkozas);
-
-        if (probalkozas > maxProbalkozas) {
-            System.out.println("Belépés megtagadva!");
-        }else{
+        } while (!(beirtKod == pinKod) && probalkozas <= maxProbalkozas-1);
+        
+        if (probalkozas <= maxProbalkozas && beirtKod == pinKod) {
             System.out.println("Rendben, sikeres belépés!");
+        } else {
+            System.out.println("Belépés megtagadva!");
         }
     }
 
