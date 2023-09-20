@@ -22,10 +22,17 @@ public class BelepesKoddal {
         /*System.out.print("kód megadása: ");
         pinKod = sc.nextInt();*/
         String pinkodSzoveg = String.valueOf(pinKod);
+        //while-ra írd át
+        while (pinkodSzoveg.length() < 4 || pinkodSzoveg.length() > 6) {            
+            System.out.print("kód megadása: ");
+            pinKod = sc.nextInt();
+        }
+        /*
         do {
             System.out.print("kód megadása: ");
             pinKod = sc.nextInt();
         } while (!(pinkodSzoveg.length() < 4 || pinkodSzoveg.length() > 6));
+*/
         System.out.println("pin elmentve!");
     }
 
